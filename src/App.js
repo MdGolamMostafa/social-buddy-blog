@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -13,24 +12,24 @@ import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
-    <Router>
-          <Navbar/>
-      <Switch>
-          <Route  path="/home">
-            <Home/>
-          </Route>
-          <Route  path="/post/:postId">
-            <PostDetail/>
-          </Route>
-          <Route exact path="/">
-            <Home/>
-          </Route>
-          <Route path="*">
-            <NoMatch/>
-          </Route>
-      </Switch>
-    </Router>
+    <div >
+      <Router>
+            <Navbar/>
+        <Switch>
+            <Route  path="/home">
+              <Home/>
+            </Route>
+            <Route  path="/post/:postId">
+              <PostDetail/>
+            </Route>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route path="*">
+              <NoMatch/>
+            </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

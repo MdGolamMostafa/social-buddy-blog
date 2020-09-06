@@ -1,25 +1,20 @@
 import React from 'react';
 import CommentsDetails from '../CommentsDetails/CommentsDetails';
-import { List } from '@material-ui/core';
-
-
 
 const Comment = (props) => {
     const {comments} = props;
     console.log(comments);
     return (
        
-            <List>
+            <div>
                 
                 {   
                     comments.map((commentsDetails) =>
-                            (<CommentsDetails  commentsDetails={commentsDetails} >
-
-                        </CommentsDetails>)            
-                    )
+                                    (<CommentsDetails  commentsDetails={commentsDetails} >
+                                    </CommentsDetails>)            
+                                )
                 }
-            
-            </List>
+            </div>
     );
 };
 export default Comment;

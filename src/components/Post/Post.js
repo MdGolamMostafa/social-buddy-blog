@@ -11,10 +11,10 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
+      textAlign: 'left',
+      float :'left',
+      marginLeft:'5%',
+      marginTop:'2%'
   },
 });
 
@@ -22,38 +22,37 @@ const useStyles = makeStyles({
 const Post = (props) => {
     const classes = useStyles();
 
-
     const{id,title,body} = props.post;
-    // const postStyle ={
-    //     border:'1px solid gray',
-    //     margin:'22px',
-    //     padding:'22px',
-    //     borderRadius:'22px'
-    // }
+   
     return (
         <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
-            className={classes.media}
-            image={`https://loremflickr.com/600/400?random=${id}`}
-            title="Contemplative Reptile"
-          />
+              component="img"
+              height = '222'
+              image={`https://loremflickr.com/600/400?random=${id}`}
+              title={title}
+            />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-            {title.length > 25 ? title.substring(0, 25) + "..." : title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            {body.length > 80 ? body.substring(0, 80) + "..." : body}
-            </Typography>
+              <Typography gutterBottom variant="h5" component="h2">
+              {title.length > 30 ? title.substring(0, 30) + "..." : title}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+              {body.length > 80 ? body.substring(0, 80) + "..." : body}
+              </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-          <Link to={`/Post/${id}`}><button>See more</button></Link>
-          </Button>
+            <Button variant="contained" color="primary">
+              Share
+            </Button>
+        
+            <Link  to={`/Post/${id}`}>
+            <Button  variant="contained" color="primary">
+                See more
+            </Button>
+                </Link>
+        
         </CardActions>
       </Card>
 
